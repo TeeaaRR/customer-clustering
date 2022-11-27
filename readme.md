@@ -1,13 +1,13 @@
 # **Customer Clustering**
 
-### This project is purpose to accomplish Machine Leraning Course in Diponegoro University
+### This project is purpose to accomplish Machine Learning Course in Diponegoro University
 
 ## **Group Members**
 
 | NIM            | Name                      |
 | -------------- | ------------------------- |
 | 24060120130044 | Alvin Triseptia Mairis    |
-| 24060120       | Liem,                     |
+| 24060120130059 | Liem, Roy Marcelino       |
 | 24060120140134 | Yusuf Qisthi Abdul Jabbar |
 | 24060120       | Fariz                     |
 | 24060120       | Daniel                    |
