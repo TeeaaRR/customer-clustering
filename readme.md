@@ -10,7 +10,7 @@
 | 24060120       | Liem,                     |
 | 24060120140134 | Yusuf Qisthi Abdul Jabbar |
 | 24060120       | Fariz                     |
-| 24060120       | Daniel                    |
+| 24060120140164 | Daniel Elul Zabdianto     |
 
 ## **Introduction**
 
