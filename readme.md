@@ -10,7 +10,7 @@
 | 24060120130059 | Liem, Roy Marcelino       |
 | 24060120140134 | Yusuf Qisthi Abdul Jabbar |
 | 24060120140149 | Muhammad Fariz Aditya Pratama|
-| 24060120       | Daniel                    |
+| 24060120240164 | Daniel Elul Zabdianto     |
 
 ## **Introduction**
 
