@@ -29,8 +29,26 @@
         <div
           class="md:w-1/2 bg-white rounded shadow-xl ring-1 ring-gray-900/5 px-10"
         >
-          <a href="/"><button class="font-bold underline mt-4">Back</button></a>
+        
+          <a href="/"><button class="transition ease-in-out duration-300 font-bold mt-4  hover:text-blue-700">        
+            <svg xmlns="http://www.w3.org/2000/svg"
+              fill="none" 
+              viewBox="-3 2 24 24" 
+              stroke-width="2" 
+              stroke="currentColor" 
+              class="w-5 h-5 inline"
+            >
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" 
+              />
+            </svg>
+            
+            <p class="inline text-lg">Back</p></button></a>
+
           <div class="text-center mt-3 text-2xl font-bold">INPUT FORM</div>
+
           <form class="block mt-3" action="/result" method="POST">
             <div class="mb-4">
               <label class="block text-gray-700 font-bold mb-1" for="name">
@@ -52,7 +70,7 @@
               <input
                 required
                 type="radio"
-                id="gender"
+                id="genderM"
                 name="gender"
                 value="0"
               />
@@ -60,7 +78,7 @@
               <input
                 required
                 type="radio"
-                id="gender"
+                id="genderF"
                 name="gender"
                 value="1"
               />
@@ -68,13 +86,13 @@
             </div>
 
             <div class="mb-4">
-              <label class="block text-gray-700 font-bold mb-1" for="marital">
+              <label class="block text-gray-700 font-bold mb-1" for="Marital">
                 Marital Status
               </label>
               <input
                 required
                 type="radio"
-                id="Marital"
+                id="Marital0"
                 name="marital"
                 value="0"
               />
@@ -82,11 +100,11 @@
               <input
                 required
                 type="radio"
-                id="Marital"
+                id="Marital1"
                 name="marital"
                 value="1"
               />
-              <label for="Marital"
+              <label for="Marital1"
                 >non-single (divorced / separated / married / widowed)</label
               >
             </div>
@@ -192,7 +210,7 @@
               <input
                 type="submit"
                 value="submit"
-                class="hover:bg-transparent bg-blue-500 hover:text-blue-700 font-semibold text-white py-2 px-4 border hover:border-blue-500 border-transparent rounded-full"
+                class="transition ease-in-out duration-300 hover:bg-transparent bg-blue-500 hover:text-blue-700 font-semibold text-white py-2 px-4 border hover:border-blue-500 border-transparent rounded-full"
               />
             </div>
           </form>
