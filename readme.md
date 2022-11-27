@@ -9,7 +9,7 @@
 | 24060120130044 | Alvin Triseptia Mairis    |
 | 24060120130059 | Liem, Roy Marcelino       |
 | 24060120140134 | Yusuf Qisthi Abdul Jabbar |
-| 24060120       | Fariz                     |
+| 24060120140149 | Muhammad Fariz Aditya Pratama|
 | 24060120       | Daniel                    |
 
 ## **Introduction**
