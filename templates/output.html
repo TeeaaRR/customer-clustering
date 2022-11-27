@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- IMPORT ICON -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/images/icon.ico"
+    />
+
+    <!-- IMPORT CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      select:required:invalid {
+        color: rgb(172, 172, 172);
+      }
+      option {
+        color: black;
+      }
+    </style>
+    <title>Result | Customer Clustering</title>
+  </head>
+  <body class="font-mono bg-gray-300 text">
+    <div class="container mx-auto">
+      <div class="flex justify-center px-6 my-12">
+        <div
+          class="md:w-1/2 bg-white rounded shadow-xl ring-1 ring-gray-900/5 px-10"
+        >
+          <div class="text-center mt-3 text-2xl font-bold">FORM</div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="name">
+              Name
+            </label>
+            <p>{{ name }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="gender">
+              Gender
+            </label>
+            <p>{{ gender }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="marital">
+              Marital Status
+            </label>
+            <p>{{ marital_status }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="age">
+              Age (18-76)
+            </label>
+            <p>{{ age }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="education">
+              Education
+            </label>
+            <p>{{ education }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="income">
+              Enter Income (USD/year)
+            </label>
+            <p>{{ income }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="occupation">
+              Occupation
+            </label>
+            <p>{{ occupation }}</p>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-1" for="settlement">
+              Settlement size
+            </label>
+            <p>{{ settlement_size }}</p>
+          </div>
+
+          <div class="mb-4 text-center text-xl">
+            Based on your input, we predict that your customer is
+            <strong class="text-2xl">{{ result }}</strong> priority customer.
+          </div>
+
+          <div class="mb-4 text-center">
+            <a
+              href="/form"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >Retry</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

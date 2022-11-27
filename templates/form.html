@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- IMPORT ICON -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/images/icon.ico"
+    />
+
+    <!-- IMPORT CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      select:required:invalid {
+        color: rgb(172, 172, 172);
+      }
+      option {
+        color: black;
+      }
+    </style>
+    <title>Form | Customer Clustering</title>
+  </head>
+  <body class="font-mono bg-gray-300 text">
+    <div class="container mx-auto">
+      <div class="flex justify-center px-6 my-12">
+        <div
+          class="md:w-1/2 bg-white rounded shadow-xl ring-1 ring-gray-900/5 px-10"
+        >
+          <a href="/"><button class="font-bold underline mt-4">Back</button></a>
+          <div class="text-center mt-3 text-2xl font-bold">INPUT FORM</div>
+          <form class="block mt-3" action="/result" method="POST">
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="name">
+                Name (Optional)
+              </label>
+              <input
+                placeholder="Enter Name"
+                type="text"
+                id="name"
+                name="name"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="gender">
+                Gender
+              </label>
+              <input
+                required
+                type="radio"
+                id="gender"
+                name="gender"
+                value="0"
+              />
+              <label for="genderM">Male</label>
+              <input
+                required
+                type="radio"
+                id="gender"
+                name="gender"
+                value="1"
+              />
+              <label for="genderF">Female</label>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="marital">
+                Marital Status
+              </label>
+              <input
+                required
+                type="radio"
+                id="Marital"
+                name="marital"
+                value="0"
+              />
+              <label for="Marital0">single<br /></label>
+              <input
+                required
+                type="radio"
+                id="Marital"
+                name="marital"
+                value="1"
+              />
+              <label for="Marital"
+                >non-single (divorced / separated / married / widowed)</label
+              >
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="age">
+                Age (18-76)
+              </label>
+              <input
+                required
+                placeholder="Enter Age"
+                type="number"
+                id="age"
+                name="age"
+                min="18"
+                max="76"
+                class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="education">
+                Education
+              </label>
+              <select
+                required
+                id="education"
+                name="education"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="" disabled selected hidden>
+                  Select Education
+                </option>
+                <option value="0">Other/Unknown</option>
+                <option value="1">Highschool</option>
+                <option value="2">University</option>
+                <option value="3">Graduate School</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-1" for="income">
+                Enter Income (USD/year)
+              </label>
+              <input
+                required
+                placeholder="Enter Income"
+                type="number"
+                id="income"
+                name="income"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 font-bold mb-1"
+                for="occupation"
+              >
+                Occupation
+              </label>
+              <select
+                required
+                id="occupation"
+                name="occupation"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="" disabled selected hidden>
+                  Select Occupation
+                </option>
+                <option value="0">unemployed / unskilled</option>
+                <option value="1">skilled employee / official</option>
+                <option value="2">
+                  management / self-employed / highly qualified employee /
+                  officer
+                </option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 font-bold mb-1"
+                for="settlement"
+              >
+                Settlement size
+              </label>
+              <select
+                required
+                id="settlement"
+                name="settlement"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="" disabled selected hidden>
+                  Select Settlement
+                </option>
+                <option value="0">small city</option>
+                <option value="1">mid-sized city</option>
+                <option value="2">big city</option>
+              </select>
+            </div>
+
+            <div class="mb-4 text-center">
+              <input
+                type="submit"
+                value="submit"
+                class="hover:bg-transparent bg-blue-500 hover:text-blue-700 font-semibold text-white py-2 px-4 border hover:border-blue-500 border-transparent rounded-full"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
