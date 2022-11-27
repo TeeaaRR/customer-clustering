@@ -1,19 +1,35 @@
 # Model clustering
 import pickle
 import numpy as np
+import pandas as pd
 k_means = pickle.load(open("./static/models/final_model.pickle","rb"))
-pca = pickle.load(open("./static/models/pca.pickle","rb"))
+famd = pickle.load(open("./static/models/famd.pickle","rb"))
 normalization = pickle.load(open("./static/models/standard_scaler.pickle","rb"))
 
-def customerClustering(data):
-    # convert data to 2D array
-    data = np.array(data).reshape(1,-1)
-    # normalize the data
-    normalize_data = normalization.transform(data)
+def customerClustering(education, income, occupation, settlement):
+    # convert data to dataframe
+    data = pd.DataFrame(data=[[education, income, occupation, settlement]], 
+                        columns=["Education", "Income", "Occupation", "Settlement size"])
+
+    # create dummy data to help FAMD reduction (bug in famd.transform)
+    dummy = pd.DataFrame(data=[ ["Unknown / other", 140000, "Unemployed / unskilled", "Small city"],
+                                ["Highschool", 140000, "Skilled / official", "Mid-sized city"], 
+                                ["University", 140000, "Management / self-employed", "Big city"], 
+                                ["Graduate school", 140000, "Skilled / official", "Big city"]], 
+                                columns=["Education", "Income", "Occupation", "Settlement size"])
+    
+    data = pd.concat([data, dummy], ignore_index=True)
+
+    # normalize the income
+    data[["Income"]] = normalization.transform(data[["Income"]])
+    
     # reduce the dimensionality of the data
-    reduce_feature = pca.transform(normalize_data)
+    reduce_feature = famd.transform(data)
+
     # Get the prediction
-    result = k_means.predict(reduce_feature)
+    result = k_means.predict(reduce_feature)[0]
+    
+    print(result)
     return result
 
 
@@ -58,21 +74,19 @@ def clustering():
         gender = 'Male' if user_input[0] == 0 else 'Female'
         marital_status = 'Single' if user_input[1] == 0 else 'Non-Single'
         age = user_input[2]
-        education = 'High School' if user_input[3] == 0 else 'University' if user_input[3] == 1 else 'Graduate School'
+        education = 'Unknown / other' if user_input[3] == 1 else 'Highschool' if user_input[3] == 1 else 'University' if user_input[3] == 2 else 'Graduate school'
         income = user_input[4]
-        occupation = 'Unemployed' if user_input[5] == 0 else 'Skilled Employee' if user_input[5] == 1 else 'Manager'
-        settlement_size = 'Small City' if user_input[6] == 0 else 'Mid City' if user_input[6] == 1 else 'Big City'
+        occupation = 'Unemployed / unskilled' if user_input[5] == 0 else 'Skilled / official' if user_input[5] == 1 else 'Management / self-employed'
+        settlement_size = 'Small city' if user_input[6] == 0 else 'Mid-sized city' if user_input[6] == 1 else 'Big city'
 
         # Get the prediction from the model
-        result = customerClustering(user_input)
+        result = customerClustering(education, income, occupation, settlement_size)
         if(result == 0):
-            result = 'Low-Average'
+            result = 'Medium'
         elif(result == 1):
-            result = 'Lowest'
+            result = 'Low'
         elif(result == 2):
-            result = 'High-Average'
-        elif(result == 3):
-            result = 'Highest'
+            result = 'High'
         else:
             result = 'Unknown'
         return render_template('output.html',name=name, gender=gender, marital_status=marital_status, age=age, education=education, income=income, occupation=occupation, settlement_size=settlement_size, result=result)
