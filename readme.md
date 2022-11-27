@@ -39,24 +39,43 @@ The model used in this project is K-Means Clustering. To know how we found the b
 
 For demo, go to our [Website Customer Clustering](https://customer-clustering.onrender.com/)
 
+## **How to Contribute**
+
+1. Fork this repository
+2. Clone your forked repository
+3. Create a new branch
+
+```
+    git checkout -b <branch-name>
+```
+
+4. Make changes and commit
+
+```
+    git add .
+    git commit -m "<commit-message>"
+```
+
+5. Push changes to GitHub
+
+```
+    git push origin <branch-name>
+```
+
+6. Create a pull request
+
 ## **How to Run**
 
-1. Clone this repository
+1. After cloning the repository, install the requirements
 
 ```
-git clone https://github.com/alvintriseptia/customer-clustering.git
+    pip install -r requirements.txt
 ```
 
-2. Install the requirements
+2. Run the app
 
 ```
-pip install -r requirements.txt
-```
-
-3. Run the app
-
-```
-flask run
+    flask run
 ```
 
 ## **Tech**
