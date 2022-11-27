@@ -38,3 +38,30 @@ The model used in this project is K-Means Clustering. To know how we found the b
 ## **Deployement**
 
 For demo, go to our [Website Customer Clustering](https://customer-clustering.onrender.com/)
+
+## **How to Run**
+
+1. Clone this repository
+
+```
+git clone https://github.com/alvintriseptia/customer-clustering.git
+```
+
+2. Install the requirements
+
+```
+pip install -r requirements.txt
+```
+
+3. Run the app
+
+```
+flask run
+```
+
+## **Tech**
+
+1. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+2. [Tailwind CSS](https://tailwindcss.com/)
+3. [Google Colab](https://colab.research.google.com/)
+4. [Render](https://render.com/)
